@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Reels Stopper</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">⏸️</div>
+    <div>
+      <h1>Reels Stopper</h1>
+      <p class="tagline">Break the scroll, on purpose.</p>
+    </div>
+  </header>
+
+  <section class="stats-grid">
+    <div class="stat-box">
+      <b id="today-count">0</b>
+      <span>Reels today</span>
+    </div>
+    <div class="stat-box">
+      <b id="today-time">0</b>
+      <span>Minutes today</span>
+    </div>
+    <div class="stat-box">
+      <b id="today-overrides">0</b>
+      <span>Overrides used</span>
+    </div>
+  </section>
+
+  <section class="chart-section">
+    <h2>Last 7 days</h2>
+    <div id="chart" class="chart"></div>
+  </section>
+
+  <section class="settings-section">
+    <h2>Settings</h2>
+
+    <label class="field">
+      <span>Reels limit before block</span>
+      <input type="number" id="scrollLimit" min="3" max="200" />
+    </label>
+
+    <label class="field">
+      <span>Cooldown (minutes)</span>
+      <input type="number" id="cooldownMinutes" min="1" max="60" />
+    </label>
+
+    <label class="toggle-row">
+      <span>Instagram Reels</span>
+      <input type="checkbox" id="enabledInstagram" />
+    </label>
+
+    <label class="toggle-row">
+      <span>YouTube Shorts</span>
+      <input type="checkbox" id="enabledYoutube" />
+    </label>
+
+    <label class="toggle-row">
+      <span>Motivational quote on return</span>
+      <input type="checkbox" id="showQuotes" />
+    </label>
+
+    <button id="save-btn">Save settings</button>
+    <button id="reset-btn" class="secondary">Reset all stats</button>
+    <div id="save-msg" class="save-msg"></div>
+  </section>
+
+  <script src="storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
